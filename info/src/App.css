@@ -1,0 +1,159 @@
+/* ── Welcome Page ── */
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.welcome-content {
+  max-width: 480px;
+  text-align: left;
+}
+
+.name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.username {
+  font-size: 1.2rem;
+  color: #999;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.welcome-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.enter-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.enter-link:hover {
+  opacity: 0.5;
+}
+
+/* ── Posts Page ── */
+
+.posts-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.posts-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.posts-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  border-bottom: 1px solid #111;
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 0.5;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-item {
+  border-top: 1px solid #e5e5e5;
+}
+
+.post-item:last-child {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.post-item a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  transition: opacity 0.2s;
+}
+
+.post-item a:hover {
+  opacity: 0.55;
+}
+
+.post-platform {
+  font-size: 1rem;
+  width: 24px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.post-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.post-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.post-arrow {
+  font-size: 0.9rem;
+  color: #bbb;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2rem;
+  }
+
+  .posts-page {
+    padding: 2rem 1rem;
+  }
+}

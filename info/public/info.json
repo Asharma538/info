@@ -1,0 +1,14 @@
+{
+  "name": "Anadi Sharma",
+  "username": "Asharma538",
+  "tagline": "I build. I learn. I write. I share.",
+  "bio": "I love being active across platforms. You can find all my activity here.",
+  "posts": [
+    {
+      "title": "Title of the Post",
+      "platform": "Platform of the Post",
+      "url": "https://example.com/post-url",
+      "date": "DDMMYYYY"
+    }
+  ]
+}
