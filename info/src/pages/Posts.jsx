@@ -24,7 +24,7 @@ export default function Posts({ posts }) {
               <span className="post-info">
                 <span className="post-title">{post.title}</span>
                 <span className="post-meta">
-                  {post.platform} &middot; {post.date}
+                  {post.platform}{post.date ? <> &middot; {post.date}</> : null}
                 </span>
               </span>
               <span className="post-arrow">&rarr;</span>
