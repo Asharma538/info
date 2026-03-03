@@ -4,7 +4,28 @@
   font-family: "Delius", cursive;
 }
 
+.rotrect {
+  position: absolute;
+  aspect-ratio: 1;
+  border: 3px solid black;
+  border-radius: 20px;
+  z-index: -1;
+  pointer-events: none;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .welcome {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,9 +227,9 @@
 /* Small phones */
 @media (max-width: 480px) {
   .welcome {
-    padding: 1.25rem;
-    align-items: flex-start;
-    padding-top: 20vh;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
   }
 
   .name {
@@ -269,8 +290,9 @@
 /* Very small screens (SE, mini) */
 @media (max-width: 360px) {
   .welcome {
-    padding: 1rem;
-    padding-top: 15vh;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
   }
 
   .name {
