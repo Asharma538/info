@@ -1,87 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Betania+Patmos&family=Delius&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Betania+Patmos&family=Delius&family=Montserrat:wght@400;500;700&family=Poiret+One&display=swap');
 /* ── Welcome Page ── */
 * {
   font-family: "Delius", cursive;
 }
 
-.rotrect {
-  position: absolute;
-  aspect-ratio: 1;
-  border: 3px solid black;
-  border-radius: 20px;
-  z-index: -1;
-  pointer-events: none;
-  animation: rotate 10s linear infinite;
+body, html, #root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.welcome {
+.welcome-app {
   position: relative;
-  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  font-family: "Montserrat", serif;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0.5) 200%);
+}
+
+.hero {
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
 }
 
-.welcome-content {
-  max-width: 480px;
-  text-align: left;
+.hero h1, .hero h2 {
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  line-height: 100%;
+  user-select: none;
+  font-family: "Montserrat", serif;
 }
 
-.name {
-  font-size: 2.8rem;
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 100px;
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 0.25rem;
 }
 
-.username {
-  font-size: 1.2rem;
-  color: #999;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
-}
-
-.tagline {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 1.2rem;
-}
-
-.bio {
-  font-size: 0.95rem;
-  color: #777;
-  margin-bottom: 2rem;
-  line-height: 1.7;
-}
-
-.welcome-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.enter-link {
-  display: inline-block;
-  font-size: 0.95rem;
+.hero h2 {
+  font-size: 80px;
   font-weight: 500;
-  border-bottom: 1.5px solid #111;
-  padding-bottom: 2px;
-  transition: opacity 0.2s;
 }
 
-.enter-link:hover {
-  opacity: 0.5;
+#webgl-canvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.buttons {
+  position: fixed;
+  width: 100%;
+  bottom: 15%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.buttons button, .buttons a {
+  color: black;
+  font-family: "Montserrat", serif;
+  font-size: 12px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.buttons button:hover, .buttons a:hover {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 /* ── Posts Page ── */

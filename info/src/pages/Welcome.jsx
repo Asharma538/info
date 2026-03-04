@@ -1,113 +1,69 @@
 import { Link } from 'react-router-dom'
-import { useMemo, useEffect, useState } from 'react'
-
-function generateRects(count, viewW, viewH) {
-  // Define the center exclusion zone (where welcome-content sits)
-  const centerW = 520
-  const centerH = 360
-  const cx = viewW / 2
-  const cy = viewH / 2
-  const exclusion = {
-    left: cx - centerW / 2 - 30,
-    right: cx + centerW / 2 + 30,
-    top: cy - centerH / 2 - 30,
-    bottom: cy + centerH / 2 + 30,
-  }
-
-  const rects = []
-  let attempts = 0
-
-  while (rects.length < count && attempts < count * 40) {
-    attempts++
-    const size = 40 + Math.random() * 160 // 40–200px
-    const x = Math.random() * (viewW - size)
-    const y = Math.random() * (viewH - size)
-    const rectRight = x + size
-    const rectBottom = y + size
-
-    // Skip if overlapping with the center content
-    const overlapsCenter =
-      rectRight > exclusion.left &&
-      x < exclusion.right &&
-      rectBottom > exclusion.top &&
-      y < exclusion.bottom
-
-    if (overlapsCenter) continue
-
-    // Skip if overlapping with another rect (with padding)
-    const pad = 20
-    const overlapsOther = rects.some(
-      (r) =>
-        x < r.x + r.size + pad &&
-        x + size + pad > r.x &&
-        y < r.y + r.size + pad &&
-        y + size + pad > r.y
-    )
-
-    if (overlapsOther) continue
-
-    rects.push({
-      x,
-      y,
-      size,
-      duration: 8 + Math.random() * 14, // 8–22s
-      delay: -(Math.random() * 10),     // stagger start
-      borderRadius: 8 + size * 0.1,
-      borderWidth: Math.max(2, Math.floor(size / 50) + 1),
-      opacity: 0.12 + Math.random() * 0.18,
-    })
-  }
-
-  return rects
-}
+import { useEffect, useRef } from 'react'
 
 export default function Welcome({ info }) {
-  const [dims, setDims] = useState({ w: window.innerWidth, h: window.innerHeight })
+  const canvasRef = useRef(null)
+  const bgRef = useRef(null)
 
   useEffect(() => {
-    const onResize = () => setDims({ w: window.innerWidth, h: window.innerHeight })
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
+    let cancelled = false
+
+    const initBackground = async () => {
+      try {
+        const module = await import('https://cdn.jsdelivr.net/npm/threejs-components@0.0.8/build/backgrounds/spheres2.cdn.min.js')
+        const Spheres2Background = module.default
+
+        if (cancelled || !canvasRef.current) return
+
+        const bg = Spheres2Background(canvasRef.current, {
+          count: 200,
+          colors: [0xff0000, 0x0, 0xffffff],
+          minSize: 0.5,
+          maxSize: 1
+        })
+        bgRef.current = bg
+      } catch (error) {
+        console.error('Failed to load spheres background:', error)
+      }
+    }
+
+    initBackground()
+
+    return () => {
+      cancelled = true
+      if (bgRef.current && bgRef.current.dispose) {
+        bgRef.current.dispose()
+        bgRef.current = null
+      }
+    }
   }, [])
 
-  const rects = useMemo(() => {
-    // Fewer rects on small screens
-    const count = dims.w < 480 ? 4 : dims.w < 768 ? 10 : 10
-    return generateRects(count, dims.w, dims.h)
-  }, [dims.w, dims.h])
+  const handleColorsClick = () => {
+    if (bgRef.current) {
+      bgRef.current.spheres.setColors([
+        0xffffff * Math.random(),
+        0xffffff * Math.random(),
+        0xffffff * Math.random()
+      ])
+      bgRef.current.spheres.light1.color.set(0xffffff * Math.random())
+    }
+  }
 
   return (
-    <div className="welcome">
-      {rects.map((r, i) => (
-        <div
-          key={i}
-          className="rotrect"
-          style={{
-            left: r.x,
-            top: r.y,
-            width: r.size,
-            borderRadius: r.borderRadius,
-            borderWidth: r.borderWidth,
-            opacity: r.opacity,
-            animationDuration: `${r.duration}s`,
-            animationDelay: `${r.delay}s`,
-          }}
-        />
-      ))}
-      <div className="welcome-content">
-        <h1 className="name">{info.name}</h1>
-        {info.username && <p className="username">@{info.username}</p>}
-        <p className="tagline">{info.tagline}</p>
-        <p className="bio">{info.bio}</p>
-        <div className="welcome-links">
-          <Link to="/posts" className="enter-link">
-            View my posts &rarr;
-          </Link>
-          <a href="https://asharma.tech" target="_blank" rel="noopener noreferrer" className="enter-link">
-            Portfolio &rarr;
-          </a>
-        </div>
+    <div className="welcome-app">
+      <div className="hero">
+        <h1>Anadi</h1>
+        <h2>Sharma</h2>
       </div>
+      <div className="buttons">
+        <Link to="/posts">
+          View my posts
+        </Link>
+        <a href="https://asharma.tech" target="_blank" rel="noopener noreferrer">
+          Portfolio
+        </a>
+      </div>
+      <canvas ref={canvasRef} id="webgl-canvas"></canvas>
     </div>
   )
 }
