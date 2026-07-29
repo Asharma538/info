@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { setSeo } from '../seo'
 
 const tabLabels = {
   iGave: 'I gave',
@@ -20,6 +22,18 @@ export default function PostPage({ interviews = {} }) {
   }
 
   const tags = getTags(post)
+  const canonicalPath = `/posts/${category}/${postIndex}`
+
+  useEffect(() => {
+    const postTags = tags.length ? tags.join(', ') : 'software engineering'
+    setSeo({
+      title: `${post.company} ${post.round} Interview Experience | Anadi Sharma`,
+      description: `${post.desc} Read detailed notes for ${post.role} interview preparation and key learnings.`,
+      keywords: `${post.company}, ${post.role}, ${post.round}, ${postTags}, interview experience, software engineering interview`,
+      canonicalPath,
+      ogDescription: `${post.company} ${post.round} interview notes covering ${postTags}.`,
+    })
+  }, [canonicalPath, post.company, post.desc, post.role, post.round, tags])
 
   return (
     <div className="posts-page">
