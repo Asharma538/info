@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Welcome from './pages/Welcome'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Posts from './pages/Posts'
 import './App.css'
 
@@ -17,8 +16,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Welcome info={info} />} />
-      <Route path="/posts" element={<Posts posts={info.posts} />} />
+      <Route path="/" element={<Navigate to="/posts" replace />} />
+      <Route path="/posts" element={<Posts interviews={info.interviews} />} />
     </Routes>
   )
 }
