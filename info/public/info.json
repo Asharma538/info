@@ -2,16 +2,66 @@
   "interviews": {
     "iGave": [
       {
-        "company": "Mock Company",
-        "tags": ["System Design", "Scalability"],
-        "round": "Round 2",
-        "date": "2026-06-05",
-        "desc": "Round focused on designing a scalable notifications service and discussing trade-offs.",
-        "role": "Software Engineer Intern",
+        "company": "Zomato",
+        "tags": ["DSA", "WorkEx", "Software", "CS Fundamentals"],
+        "round": "R1",
+        "date": "2025-10-27",
+        "desc": "Standard Intro, started by solving 1 DSA Question, then moved to present work. Followed by questions on CS Concepts like paging, Acid Properties. Q: What is a Transaction, No SQL vs SQL DBs - pros and cons, Restful API rules.",
+        "role": "SRE - Software Reliability Engineer",
         "documentLinks": [
           {
-            "text": "Prep Notes",
-            "url": "https://example.com/prep-notes"
+            "text": "DSA Question",
+            "url": "https://docs.google.com/document/d/1LHRp06u59aZp0tIh6pO52z3nx3DDXyR08HHBsC4P5u0/edit?tab=t.0"
+          }
+        ],
+        "voiceNotes": []
+      },
+      {
+        "company": "Zomato",
+        "tags": ["DSA", "Projects", "System Design", "Kafka", "CS Fundamentals", "SOLID"],
+        "round": "R2",
+        "date": "2025-11-11",
+        "desc": "Standard Intro, Started by solving 1 DSA Question (Link below), moved to my projects in depth and asked me what I could improve in them, designed the new system and again added more complexities. Q: What can be the reason of increasing consumer lag in Kafka. Q: Tell me about SOLID principles. Q: Parallelism vs Concurrency.",
+        "role": "SRE - Software Reliability Engineer",
+        "documentLinks": [
+          {
+            "text": "DSA Question",
+            "url": "https://leetcode.com/problems/merge-k-sorted-lists/description/"
+          }
+        ],
+        "voiceNotes": []
+      },
+      {
+        "company": "Alepo Technologies",
+        "tags": ["Aptitude", "Math"],
+        "round": "Round 1",
+        "date": "2025-11-26",
+        "desc": "Standard Intro, 4 questions, Aptitude, Reasoning, Processing a file in python, Finding repeated number in an array.",
+        "role": "Software Developer",
+        "documentLinks": [],
+        "voiceNotes": []
+      },
+      {
+        "company": "Alepo Technologies",
+        "tags": ["DSA", "Projects", "Queue Communication"],
+        "round": "Round 2 - Inperson",
+        "date": "2025-12-02",
+        "desc": "Standard Intro, Started by solving 1 DSA Question (very basic one), dived into my projects asked for improvement. Q: What is Dead Letter Queue (was related to my project so this came up). Then we dived into another DSA problem (greedy algorithm).",
+        "role": "Software Developer",
+        "documentLinks": [],
+        "voiceNotes": []
+      },
+      {
+        "company": "Amazon",
+        "tags": ["System Design", "CS Fundamentals", "OS", "WorkEx"],
+        "round": "Round 1",
+        "date": "2025-05-27",
+        "desc": "In-person round, 2 Interviewers, Standard Intro, follwed by instruction to design the Card Module of Amazon, how product udpates should be handled for carts of users, what functions are required and all the code was supposed to be written entirely on whiteboard (was told it should be of production quality). Was asked a lot about Work Experience and a problem that was not under my umbrella but I proactively took it.",
+        "role": "SWE - 1",
+        "documentLinks": [
+          {
+            "text": "Related Leetcode Thread (What I was asked was a bit more than this)",
+            "url": "https://leetcode.com/discuss/post/706736/amazon-london-shopping-cart-oops-by-anon-p0ak/"
           }
         ],
         "voiceNotes": [
@@ -20,23 +70,88 @@
             "url": "https://example.com/voice-note"
           }
         ]
+      },
+      {
+        "company": "Amazon",
+        "tags": ["DSA", "AI", "WorkEx"],
+        "round": "Round 2",
+        "date": "2025-05-27",
+        "desc": "In-person round, 2 Interviewers, Standard Intro. I was asked a Range Queries question, in 3 parts. P1: Find how many people connected to the wifi during a particular period. P2: Find max number of people connected to wifi at any time betweeen L and R. P3: Find unique number of users connected to wifi during L and R. I was asked to code all three on paper. Post this I was asked how do I use AI and a question related to my work experience, asking about a deep dive I've done for debugging an issue.",
+        "role": "SWE - 1",
+        "documentLinks": [],
+        "voiceNotes": []
+      },
+      {
+        "company": "Amazon",
+        "tags": ["DSA", "AI", "WorkEx"],
+        "round": "Round 3",
+        "date": "2025-05-27",
+        "desc": "In-person round, Standard Intro, following this I was asked how to handle hallucinations in a large codebase by AI models, a DSA question about how to deploy dependent services (topological sort). Post this I was asked to tell how can we deploy cyclic dependency services (if they absolutely need to exist).",
+        "role": "SWE - 1",
+        "documentLinks": [
+          {
+            "text": "Related Leetcode Blog",
+            "url": "https://leetcode.com/discuss/post/1409160/7-topological-sorting-by-baba_rude-nvan/"
+          }
+        ],
+        "voiceNotes": []
+      },
+      {
+        "company": "Amazon",
+        "tags": ["WorkEx", "Bar Raiser"],
+        "round": "Round 4",
+        "date": "2025-05-27",
+        "desc": "In-person round, Standard Intro, I was asked multiple questions related to Amazon's Leadership principles and mostly we went into technical discussions about the work I did in those situations.",
+        "role": "SWE - 1",
+        "documentLinks": [
+          {
+            "text": "Amazon Leadership Principles - there are 6 for SWE-1",
+            "url": "https://www.amazon.jobs/content/en/our-workplace/leadership-principles"
+          }
+        ],
+        "voiceNotes": []
+      },
+      {
+        "company": "<Company>",
+        "tags": ["<tags>"],
+        "round": "<round#>",
+        "date": "<date-of-interview>",
+        "desc": "<what-happened>",
+        "role": "<role>",
+        "documentLinks": [
+          {
+            "text": "<link-#-text>",
+            "url": "example.com"
+          }
+        ],
+        "voiceNotes": [
+          {
+            "text": "<voice-note-#-text>",
+            "url": "example.com"
+          }
+        ]
       }
     ],
     "iHeardAFriend": [
       {
-        "company": "Mock Friend Interview",
-        "tags": ["Operating Systems", "Memory Management"],
-        "round": "Phone Screen",
-        "date": "2026-04-22",
-        "desc": "Friend shared questions on process scheduling and memory management fundamentals.",
-        "role": "Backend Engineer",
+        "company": "<company>",
+        "tags": ["<tags>"],
+        "round": "<round>",
+        "date": "<date>",
+        "desc": "<desc>",
+        "role": "<role>",
         "documentLinks": [
           {
-            "text": "Question List",
-            "url": "https://example.com/question-list"
+            "text": "<link-#-text>",
+            "url": "example.com"
           }
         ],
-        "voiceNotes": []
+        "voiceNotes": [
+          {
+            "text": "<voice-note-#-text>",
+            "url": "example.com"
+          }
+        ]
       }
     ]
   }
