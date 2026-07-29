@@ -3,7 +3,9 @@
     "iGave": [
       {
         "company": "Mock Company",
-        "tag": "System Design",
+        "tags": ["System Design", "Scalability"],
+        "round": "Round 2",
+        "date": "2026-06-05",
         "desc": "Round focused on designing a scalable notifications service and discussing trade-offs.",
         "role": "Software Engineer Intern",
         "documentLinks": [
@@ -23,7 +25,9 @@
     "iHeardAFriend": [
       {
         "company": "Mock Friend Interview",
-        "tag": "Operating Systems",
+        "tags": ["Operating Systems", "Memory Management"],
+        "round": "Phone Screen",
+        "date": "2026-04-22",
         "desc": "Friend shared questions on process scheduling and memory management fundamentals.",
         "role": "Backend Engineer",
         "documentLinks": [
