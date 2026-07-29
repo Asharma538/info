@@ -1,5 +1,7 @@
+import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { setSeo } from '../seo'
 
 const tabs = [
   { key: 'iGave', label: 'I gave' },
@@ -12,6 +14,16 @@ function getTags(interview) {
 }
 
 export default function Posts({ interviews = {} }) {
+  useEffect(() => {
+    setSeo({
+      title: 'Interview Experiences | Anadi Sharma',
+      description:
+        'Explore software engineering interview experiences by Anadi Sharma, including DSA, system design, and CS fundamentals round notes.',
+      keywords:
+        'interview experiences, software engineer interview prep, DSA interview questions, system design interview, CS fundamentals, SRE interview, SWE interview',
+      canonicalPath: '/posts',
+    })
+  }, [])
   const [activeTab, setActiveTab] = useState(tabs[0].key)
   const activePosts = interviews[activeTab] || []
 
