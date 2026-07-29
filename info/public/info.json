@@ -140,6 +140,10 @@
         "date": "<date>",
         "desc": "<desc>",
         "role": "<role>",
+        "friendMention": {
+          "text": "@<friend-name>",
+          "url": "https://www.linkedin.com/in/<friend-profile>"
+        },
         "documentLinks": [
           {
             "text": "<link-#-text>",
