@@ -157,7 +157,12 @@ body, html, #root {
 }
 
 .posts-tab.active {
-  text-decoration: underline;
+  background: #111;
+  color: #fff;
+}
+
+.posts-tab:not(.active) {
+  opacity: 0.7;
 }
 
 .post-item {
@@ -177,10 +182,19 @@ body, html, #root {
 }
 
 .post-title {
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.post-title-chip {
+  display: inline-block;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
 }
 
 .post-meta {
@@ -204,6 +218,14 @@ body, html, #root {
   font-size: 0.9rem;
 }
 
+.post-desc-preview {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 .post-tags {
   display: flex;
   flex-wrap: wrap;
@@ -225,6 +247,16 @@ body, html, #root {
 
 .post-links-group a {
   color: inherit;
+}
+
+.post-mention {
+  font-size: 0.82rem;
+  text-decoration: underline;
+}
+
+.post-mention-line {
+  margin: 0 0 0.8rem;
+  font-size: 0.82rem;
 }
 
 .post-empty {
