@@ -14,7 +14,7 @@ export default function Posts({ interviews = {} }) {
   return (
     <div className="posts-page">
       <header className="posts-header">
-        <h1>Interview Experiences</h1>
+        <h1>My Experiences</h1>
       </header>
 
       <div className="posts-sections">
