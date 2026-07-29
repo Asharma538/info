@@ -41,13 +41,23 @@ export default function PostPage({ interviews = {} }) {
         <Link to="/posts" className="back-link">
           ← Back
         </Link>
-        <h1>{post.company}</h1>
+        <h1 className="post-title">
+          <span className="post-title-chip">{post.company}</span>
+          <span className="post-title-chip">{post.role}</span>
+          <span className="post-title-chip">{post.round}</span>
+          <span className="post-title-chip">{post.date}</span>
+        </h1>
       </header>
 
-      <p className="post-meta-line">
-        {post.company} | {post.role} | {post.round} | {post.date}
-      </p>
       <p className="post-category">{tabLabels[category] || category}</p>
+      {post.friendMention?.url ? (
+        <p className="post-mention-line">
+          Mentioned friend:{' '}
+          <a href={post.friendMention.url} target="_blank" rel="noopener noreferrer" className="post-mention">
+            {post.friendMention.text || post.friendMention.url}
+          </a>
+        </p>
+      ) : null}
       <p className="post-desc">{post.desc}</p>
 
       <div className="post-tags">
