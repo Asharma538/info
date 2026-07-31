@@ -54,8 +54,8 @@
       {
         "company": "Amazon",
         "tags": ["System Design", "CS Fundamentals", "OS", "WorkEx"],
-        "round": "Round 1",
-        "date": "2025-05-27",
+        "round": "Ronnd 1",
+        "date": "2026-05-27",
         "desc": "In-person round, 2 Interviewers, Standard Intro, follwed by instruction to design the Card Module of Amazon, how product udpates should be handled for carts of users, what functions are required and all the code was supposed to be written entirely on whiteboard (was told it should be of production quality). Was asked a lot about Work Experience and a problem that was not under my umbrella but I proactively took it.",
         "role": "SWE - 1",
         "documentLinks": [
@@ -75,7 +75,7 @@
         "company": "Amazon",
         "tags": ["DSA", "AI", "WorkEx"],
         "round": "Round 2",
-        "date": "2025-05-27",
+        "date": "2026-05-27",
         "desc": "In-person round, 2 Interviewers, Standard Intro. I was asked a Range Queries question, in 3 parts. P1: Find how many people connected to the wifi during a particular period. P2: Find max number of people connected to wifi at any time betweeen L and R. P3: Find unique number of users connected to wifi during L and R. I was asked to code all three on paper. Post this I was asked how do I use AI and a question related to my work experience, asking about a deep dive I've done for debugging an issue.",
         "role": "SWE - 1",
         "documentLinks": [],
@@ -85,7 +85,7 @@
         "company": "Amazon",
         "tags": ["DSA", "AI", "WorkEx"],
         "round": "Round 3",
-        "date": "2025-05-27",
+        "date": "2026-05-27",
         "desc": "In-person round, Standard Intro, following this I was asked how to handle hallucinations in a large codebase by AI models, a DSA question about how to deploy dependent services (topological sort). Post this I was asked to tell how can we deploy cyclic dependency services (if they absolutely need to exist).",
         "role": "SWE - 1",
         "documentLinks": [
@@ -100,7 +100,7 @@
         "company": "Amazon",
         "tags": ["WorkEx", "Bar Raiser"],
         "round": "Round 4",
-        "date": "2025-05-27",
+        "date": "2026-05-27",
         "desc": "In-person round, Standard Intro, I was asked multiple questions related to Amazon's Leadership principles and mostly we went into technical discussions about the work I did in those situations.",
         "role": "SWE - 1",
         "documentLinks": [
@@ -112,10 +112,20 @@
         "voiceNotes": []
       },
       {
-        "company": "<Company>",
-        "tags": ["<tags>"],
-        "round": "<round#>",
-        "date": "<date-of-interview>",
+        "company": "BNY",
+        "tags": ["DSA", "Projects", "Behavioural"],
+        "round": "Round 1",
+        "date": "~ Aug 2024",
+        "desc": "Standard Intro, then a DSA question on Fibenacci Series, followed by coding up a html page for a form, some behavioural questions.",
+        "role": "SWE Intern",
+        "documentLinks": [],
+        "voiceNotes": []
+      },
+      {
+        "company": "BNY",
+        "tags": ["DSA", "Projects", "Behavioural"],
+        "round": "Round 2",
+        "date": "Standard Intro, asked about LRU Cache Implementation (Doubly Linked List + Hashmap), Asked about how companies like Swiggy and Zomato show you restaurants of your area (was related to one of my projects) - Geo Hashing, post this I was asked if I'm a role model of someone and some other generic HR questions.",
         "desc": "<what-happened>",
         "role": "<role>",
         "documentLinks": [
