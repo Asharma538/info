@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { setSeo } from '../seo'
 
 const tabs = [
@@ -26,6 +26,7 @@ export default function Posts({ interviews = {} }) {
   }, [])
   const [activeTab, setActiveTab] = useState(tabs[0].key)
   const activePosts = interviews[activeTab] || []
+  const navigate = useNavigate()
 
   return (
     <div className="posts-page">
@@ -51,20 +52,42 @@ export default function Posts({ interviews = {} }) {
           <ul className="posts-list">
             {activePosts.map((interview, index) => {
               const tags = getTags(interview)
+              const postUrl = `/posts/${activeTab}/${index}`
+
               return (
-                <li key={`${interview.company}-${index}`} className="post-item">
+                <li
+                  key={`${interview.company}-${index}`}
+                  className="post-item"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => navigate(postUrl)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      navigate(postUrl)
+                    }
+                  }}
+                >
                   <div className="post-info">
-                    <Link to={`/posts/${activeTab}/${index}`} className="post-title">
+                    <div className="post-title">
                       <span className="post-title-chip">{interview.company}</span>
                       <span className="post-title-chip">{interview.role}</span>
                       <span className="post-title-chip">{interview.round}</span>
                       <span className="post-title-chip">{interview.date}</span>
-                    </Link>
+                    </div>
+
                     {interview.friendMention?.url ? (
-                      <a href={interview.friendMention.url} target="_blank" rel="noopener noreferrer" className="post-mention">
+                      <a
+                        href={interview.friendMention.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="post-mention"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         Mentioned: {interview.friendMention.text || interview.friendMention.url}
                       </a>
                     ) : null}
+
                     <p className="post-desc post-desc-preview">{interview.desc}</p>
                     <span className="post-meta">Tags: {tags.length ? tags.join(', ') : 'None'}</span>
                   </div>
