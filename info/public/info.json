@@ -154,6 +154,34 @@
     ],
     "iHeardAFriend": [
       {
+        "company": "Airamatrix",
+        "tags": ["Computer Vision (CV)", "Neural Networks (NN)", "Normalisation", "Foundational ML"],
+        "round": "Round 1+2+3",
+        "date": "02-12-2024",
+        "desc": "Following Introduction, questions were focussed on Basic Architectures of NN, CNN, RNN, Activation Functions + their use, Loss Functions and their properties, Optimization techniques - Gradient Descent + SGD + Adam Optimizer, Is CNN's architecture related to CV and what they differently introduced - Resnet + InceptionNet + MobileNet + VGG + LeNet + Visual Transformers, Attention (self + cross + multiheaded), Batch Normalization, Affects of changing hyperparameters (batch size, weight decay, LR), Data Augmentation, Over fitting, Under fitting",
+        "role": "AI Engineer",
+        "friendMention": {
+          "text": "@shubh-goyal",
+          "url": "https://www.linkedin.com/in/shubh-goyal-78a6a6222/"
+        },
+        "documentLinks": [],
+        "voiceNotes": []
+      },
+      {
+        "company": "Airamatrix",
+        "tags": ["Behavioural"],
+        "round": "Round 4",
+        "date": "02-12-2024",
+        "desc": "Following a standard Intro, was asked about whether you want to pursure higher studies, and general HR related questions.",
+        "role": "AI Engineer",
+        "friendMention": {
+          "text": "@shubh-goyal",
+          "url": "https://www.linkedin.com/in/shubh-goyal-78a6a6222/"
+        },
+        "documentLinks": [],
+        "voiceNotes": []
+      },
+      {
         "company": "<company>",
         "tags": ["<tags>"],
         "round": "<round>",
