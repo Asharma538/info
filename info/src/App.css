@@ -216,6 +216,7 @@ body, html, #root {
 .post-desc {
   margin: 0;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .post-desc-preview {
@@ -252,6 +253,7 @@ body, html, #root {
 .post-mention {
   font-size: 0.82rem;
   text-decoration: underline;
+  width: fit-content;
 }
 
 .post-mention-line {
